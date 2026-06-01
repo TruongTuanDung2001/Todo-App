@@ -1,0 +1,64 @@
+<!-- BEM:
+
+    Block      => sidebar
+    Element    => sidebar__menu
+    Modifier   => sidebar--left 
+    ||||||||
+    Ý nghĩa: 2 dấu __
+    sidebar         → Block
+    sidebar__header → Element của sidebar
+    sidebar__menu   → Element của sidebar
+    sidebar__item   → Element của sidebar
+
+    Dấu __ giống như đọc là:
+
+    "header thuộc về sidebar"
+    
+    |||||||
+    Ý nghĩa:
+    sidebar--left  → sidebar phiên bản left
+    btn--primary   → button phiên bản primary
+    btn--danger    → button phiên bản danger
+
+    Modifier là biến thể của một component.
+
+    |||||||
+    4. Ví dụ dễ hình dung
+    <div class="card card--featured">
+
+        <h2 class="card__title">
+            Product A
+        </h2>
+
+        <p class="card__description">
+            Description
+        </p>
+
+    </div>
+
+    Phân tích:
+
+    card                  → Block
+
+    card__title           → Element
+
+    card__description     → Element
+
+    card--featured        → Modifier
+
+    Nhớ một câu là đủ:
+
+    __ = thuộc về (Element)
+
+    -- = biến thể (Modifier)
+
+    Ví dụ:
+
+    sidebar__menu
+        ^^
+        menu thuộc sidebar
+
+    sidebar--left
+        ^^
+    sidebar phiên bản left
+-->

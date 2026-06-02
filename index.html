@@ -4,27 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
+    <!-- link css, fornt awesome -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- https://cdnjs.com/libraries/font-awesome lấy link-->
+    <!-- https://fontawesome.com/search?ic=free-collection sử dụng icon free-->
 </head>
 <body>
     <div class="app">
         <div class="layout">
             <div class="sidebar sidebar--left">
                 <div class="sidebar__header">
-                    <div class="sidebar__logo"></div>
-                    <div class="sidebar__title"></div>
+                    <div class="sidebar__logo">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="sidebar__title">My Task</div>
                 </div>
                 
                 <div class="sidebar__info">
-                    <div class="sidebar__avatar"></div>
-                    <div class="sidebar__name"></div>
-                    <div class="sidebar__email"></div>
+                    <div class="sidebar__avatar">
+                        <img src="image/avatar.jpg" alt="">
+                    </div>
+                    <div class="sidebar__name">
+                        Trương Tuấn Dũng
+                    </div>
+                    <div class="sidebar__email">
+                        truongtuandung2001@gmail.com
+                    </div>
                 </div>
 
                 <ul class="sidebar__menu">
                     <li class="sidebar__item">
-                        <div class="sidebar__item-icon"></div>
-                        <a href="" class="sidebar__item-link"></a>
+                        <div class="sidebar__item-icon">
+                            <i class="fa-regular fa-house"></i>
+                        </div>
+                        <a href="" class="sidebar__item-link">Home</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <div class="sidebar__item-icon">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </div>
+                        <a href="" class="sidebar__item-link">Save</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <div class="sidebar__item-icon">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </div>
+                        <a href="" class="sidebar__item-link">Create task</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <div class="sidebar__item-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <a href="" class="sidebar__item-link">Setting</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <div class="sidebar__item-icon">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <a href="" class="sidebar__item-link">Download</a>
                     </li>
                 </ul>
             </div>

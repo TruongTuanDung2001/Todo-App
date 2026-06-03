@@ -3,10 +3,83 @@
     position:fixed;
     right:0;
     top:0;
+    overflow-y: auto;
 }
 
 .app .layout .sidebar{}
 
-.app .layout .sidebar .sidebar--right{
-    
+.app .layout .sidebar--right{
+    height: 100%;
+    background: rgb(150, 217, 239);
+}
+
+.app .layout .sidebar--right .sidebar__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 100px;
+    border: 1px solid #000000;
+}
+
+.app .layout .sidebar--right .sidebar__header .sidebar__logo{
+    font-size: 18px;
+    padding: 8px;
+    background: #4a4f47;
+    color: white;
+    border-radius: 4px;
+}
+
+.app .layout .sidebar--right .sidebar__header .sidebar__title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.app .layout .sidebar--right .sidebar__tasks{
+    padding: 30px 20px;
+}
+
+.app .layout .sidebar--right .sidebar__tasks .sidebar__tasks-date{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(26, 101, 26);
+    padding: 10px 0;
+}
+
+.app .layout .sidebar--right .sidebar__tasks .sidebar__item{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+/* Arrow */
+.app .layout .sidebar--right .sidebar__tasks .sidebar__item::before{
+    content: "";
+    display: block;
+    height: 30px;
+    width: 4px;
+    background: goldenrod;
+    /* Thêm để before vẫn giữ nguyên khi thay đổi css */
+    flex-shrink: 0;
+}
+
+.app .layout .sidebar--right .sidebar__tasks .sidebar__item-time{
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.app .layout .sidebar--right .sidebar__tasks .sidebar__item-time span{
+    font-size: 12px;
+    color: rgb(33, 140, 33);
+    font-weight: 100;
+}
+
+.app .layout .sidebar--right .sidebar__tasks .sidebar__item-content{
+    font-size: 16px;
+    color: rgb(4, 92, 4);
+    font-weight: bold;
+    word-break: break-word;
 }

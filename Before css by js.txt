@@ -1,0 +1,80 @@
+nếu đặt before rồi thì lúc mình cần css bằng js thì sao
+
+
+Nhưng có mấy cách xử lý:
+
+Cách 1 (thường dùng nhất): toggle class vào phần tử cha
+
+CSS:
+
+.sidebar__item::before{
+    content:"";
+    background:gray;
+}
+
+.sidebar__item.active::before{
+    background:gold;
+}
+
+JS:
+
+let item = document.querySelector('.sidebar__item');
+
+item.classList.add('active');
+
+=> before đổi theo class.
+
+Cách 2: dùng CSS Variable (rất mạnh)
+
+CSS:
+
+.sidebar__item{
+    --arrow-color: gray;
+}
+
+.sidebar__item::before{
+    content:"";
+    background: var(--arrow-color);
+}
+
+JS:
+
+item.style.setProperty('--arrow-color', 'red');
+
+Đổi:
+
+màu
+width
+height
+opacity
+transform
+
+đều được.
+
+Ví dụ:
+
+.sidebar__item::before{
+    width: var(--arrow-width);
+}
+item.style.setProperty('--arrow-width','10px');
+
+
+Cách 3: bỏ ::before, tạo DOM thật nếu cần thao tác nhiều
+
+HTML:
+
+<li class="sidebar__item">
+
+    <div class="arrow"></div>
+
+    <div class="sidebar__item-content">
+        Hello
+    </div>
+
+</li>
+
+JS:
+
+document
+.querySelector('.arrow')
+.style.background='red';

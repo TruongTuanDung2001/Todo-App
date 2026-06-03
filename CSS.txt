@@ -1,0 +1,15 @@
+Giải thích
+display:flex → chia 3 cột
+height:100vh → cao bằng màn hình
+flex-shrink:0 → sidebar không bị co lại
+overflow-y:auto → chỉ phần main được cuộn
+position:sticky; top:0 → sidebar luôn đứng nguyên
+
+Sơ đồ:
+
+┌────────┬──────────────────┬────────┐
+│ LEFT   │                  │ RIGHT  │
+│ cố định│      MAIN        │ cố định│
+│        │      scroll ↓    │        │
+│        │                  │        │
+└────────┴──────────────────┴────────┘

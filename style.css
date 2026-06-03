@@ -11,7 +11,7 @@ a, ul, li{
 }
 
 .app{
-
+    height: 100vh;
 }
 
 .app .layout{
@@ -19,7 +19,7 @@ a, ul, li{
 }
 
 .app .layout .sidebar{
-    height: 100vh;
+    height: 100%;
     width: 20%;
     border: 1px solid #333;
 }
@@ -29,6 +29,10 @@ a, ul, li{
     background: rgb(72, 141, 166);
     color: #fff;
     text-align: center;
+    /*  */
+    position:fixed;
+    left:0;
+    top:0;
 }
 
 /* header */
@@ -93,10 +97,31 @@ a, ul, li{
     padding-left: 25%;
 }
 
+.app .layout .sidebar--left .sidebar__menu .sidebar__item:hover .sidebar__item-icon,
+.app .layout .sidebar--left .sidebar__menu .sidebar__item:hover .sidebar__item-link{
+    color: aquamarine;
+    transition: .6s;
+}
 
+
+
+
+
+/* RIGHT */
+.app .layout .sidebar--right{
+    position:fixed;
+    right:0;
+    top:0;
+}
 
 /* MAIN */
 .app .layout__main{
     width: 60%;
     border: 1px solid #000;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    min-height:120vh;
+
+    padding:20px;
 }

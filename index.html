@@ -15,6 +15,7 @@
 <body>
     <div class="app">
         <div class="layout">
+            <!-- SIDEBAR LEFT -->
             <div class="sidebar sidebar--left">
                 <div class="sidebar__header">
                     <div class="sidebar__logo">
@@ -68,9 +69,100 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- SIDEBAR MAIN -->
             <div class="layout__main">
-                <h1>Main</h1>
+                <div class="main__header">
+                    <div class="main__header-info">
+                        Hello, TruongTuanDung
+                        <p>Wednesday, jun 3, 2026</p>
+                    </div>
+                    <div class="main__header-actions">
+                        <a href="" class="main__btn">
+                            Add New Task
+                        </a>
+                        <a href="" class="main__btnIcon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Task Cards -->
+                <div class="main__cards">
+                    <!--  -->
+                    <div class="main__card">
+                        <div class="main__card-title">
+                            Total
+                        </div>
+                        <h1 class="main__card-content">
+                            47
+                        </h1>
+                    </div>
+                    <!--  -->
+                    <div class="main__card">
+                        <div class="main__card-title">
+                            Done
+                        </div>
+                        <h1 class="main__card-content">
+                            24
+                        </h1>
+                    </div>
+                    <!--  -->
+                    <div class="main__card">
+                        <div class="main__card-title">
+                            Active
+                        </div>
+                        <h1 class="main__card-content">
+                            23
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Content -->
+            <div class="main__content">
+
+                <!-- Summary -->
+                <div class="main__summary">
+
+                    <h3>Task Summary</h3>
+
+                    <div class="main__summaryGrid">
+
+                        <div class="summaryCard">123</div>
+                        <div class="summaryCard">45</div>
+
+                        <div class="summaryCard">92</div>
+                        <div class="summaryCard">67</div>
+
+                        <div class="summaryCard">58</div>
+                        <div class="summaryCard">New</div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Upcoming -->
+                <div class="main__upcoming">
+
+                    <h3>Upcoming Task</h3>
+
+                    <div class="taskItem">
+                        Lorem ipsum
+                    </div>
+
+                    <div class="taskItem">
+                        Finish UI
+                    </div>
+
+                    <div class="taskItem">
+                        Learn Fetch API
+                    </div>
+
+                </div>
             </div>
+
+            <!-- SIDEBAR RIGHT -->
             <div class="sidebar sidebar--right">
                 <!-- Lịch làm việc ngày hiện tại -->
                 <div class="sidebar__header">
@@ -81,7 +173,7 @@
                         Wednesday 2026
                     </div>
                 </div>
-
+                <!--  -->
                 <ul class="sidebar__tasks">
                     <div class="sidebar__tasks-date">
                         Wnd 3, 2026

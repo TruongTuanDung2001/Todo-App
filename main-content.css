@@ -34,8 +34,14 @@ a, ul, li{
     border: 1px solid #000;
     margin-left: 20%;
     margin-right: 20%;
-
     min-height:120vh;
-
     padding:20px;
+    background: gray;
 }
+
+.layout__main{
+    padding:30px;
+    background:#fafafa;
+}
+
+

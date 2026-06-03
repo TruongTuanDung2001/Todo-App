@@ -1,29 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-a, ul, li{
-    text-decoration: none;
-    list-style: none;
-    color: #fff;
-    display: block;
-}
-
-.app{
-    height: 100vh;
-}
-
-.app .layout{
-    display: flex;
-}
-
-.app .layout .sidebar{
-    height: 100%;
-    width: 20%;
-    border: 1px solid #333;
-}
-
 /* SIDEBAR LEFT */
 .app .layout .sidebar--left{
     background: rgb(72, 141, 166);
@@ -105,23 +79,3 @@ a, ul, li{
 
 
 
-
-
-/* RIGHT */
-.app .layout .sidebar--right{
-    position:fixed;
-    right:0;
-    top:0;
-}
-
-/* MAIN */
-.app .layout__main{
-    width: 60%;
-    border: 1px solid #000;
-    margin-left: 20%;
-    margin-right: 20%;
-
-    min-height:120vh;
-
-    padding:20px;
-}

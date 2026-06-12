@@ -7,7 +7,65 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    
+    <!--  -->
+    <div class="auth">
+
+        <div class="auth__card">
+
+            <h1 class="auth__title">Welcome</h1>
+
+            <div class="auth__tabs">
+                <button class="auth__tab auth__tab--active">
+                    Login
+                </button>
+
+                <button class="auth__tab">
+                    Register
+                </button>
+            </div>
+
+            <form class="auth__form">
+
+                <div class="auth__group">
+                    <label class="auth__label">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        class="auth__input username"
+                        placeholder="Nhập username"
+                    >
+                </div>
+
+                <div class="auth__group">
+
+                    <label class="auth__label">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        class="auth__input password"
+                        placeholder="Nhập password"
+                    >
+                </div>
+
+                <button class="auth__button">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="auth__message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+    <!--  -->
+    <script src="/js/login.js"></script>
 </body>
-<script src="/js/login.js"></script>
 </html>

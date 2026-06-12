@@ -35,8 +35,20 @@
     font-weight: bold;
 }
 
+.app .layout .sidebar--right .sidebar__filter{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.app .layout .sidebar--right .sidebar__filter .filter-option{
+    font-size: 16px;
+    padding: 4px;
+    color: #333;
+}
+
 .app .layout .sidebar--right .sidebar__tasks{
-    padding: 30px 20px;
+    padding: 20px 10px;
 }
 
 .app .layout .sidebar--right .sidebar__tasks .sidebar__tasks-date{
@@ -50,7 +62,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 20px;
+    gap: 10px;
     padding: 4px;
     margin-bottom: 4px;
 }
@@ -69,6 +81,7 @@
     color: #000;
     font-weight: bold;
     font-size: 14px;
+    width: 110px;
 }
 
 .app .layout .sidebar--right .sidebar__tasks .sidebar__item-time span{
@@ -82,4 +95,5 @@
     color: rgb(4, 92, 4);
     font-weight: bold;
     word-break: break-word;
+    width: 100%;
 }

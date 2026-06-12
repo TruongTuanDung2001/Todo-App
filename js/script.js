@@ -127,3 +127,47 @@ function filterFuture(tasks){
     return tasks.filter(t => new Date(t.startDate) > today);
 }
 
+//Get tasks done
+function filterDone(tasks){
+    return tasks.filter(t => t.status === 'done');
+}
+
+//Get tasks active
+function filterActive(tasks){
+    return tasks.filter(t => t.status === 'active');
+}
+
+//Apply filter
+function applyFilter(optionValue){
+    switch (optionValue) {
+        case 'today':
+            return filterToday(allTasks);
+            break;
+        
+        case 'past':
+            return filterPass(allTasks);
+            break;
+    
+        case 'future':
+            return filterFuture(allTasks);
+            break;
+        
+        case 'done':
+            return filterDone(allTasks);
+            break;
+
+        case 'active':
+            return filterActive(allTasks);
+            break;
+
+        default:
+            return allTasks;
+    }
+}
+
+let optionTasks = document.querySelector('.filter-option');
+
+optionTasks.addEventListener('change', function(){
+    let filtered = applyFilter(optionTasks.value);
+    renderTasks(filtered);
+});

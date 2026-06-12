@@ -46,19 +46,21 @@ sidebarLogout.addEventListener('click', function (e) {
 });
 
 //Show data: http://localhost:3000/...
+let allTasks = [];
 async function getTasks() {
     try {
         let res = await fetch('http://localhost:3000/tasks');
         if (res.ok) {
-            let tasks = await res.json();
-            render(tasks);
+            allTasks = await res.json();
+            updateDashboard(allTasks);
+            renderTasks(allTasks);
         }
     } catch (error) {
         console.log(error);
     }
 }
 //Render tasks
-function render(tasks) {
+function updateDashboard(tasks) {
     //total-done-active
     let total = document.querySelector('.tasks-total');
     let done = document.querySelector('.tasks-done');
@@ -70,37 +72,58 @@ function render(tasks) {
     total.textContent = tasks.length;
     done.textContent = tasksDone.length;
     active.textContent = tasksActive.length;
+}
 
+function renderTasks(tasks) {
     //list tasks
     let sidebarTasks = document.querySelector('.sidebar__tasks');
     sidebarTasks.innerHTML = '';
+    //Render tasks basic
     tasks.forEach((t) => {
         sidebarTasks.innerHTML += `
-                <ul class="sidebar__tasks">
-                    <div class="sidebar__tasks-date">
-                        ${t.startDate}
-                    </div>
-                    <li class="sidebar__item">
-                        <div class="sidebar__item-time">
-                            <p>${t.startTime}</p>
-                            <span>${t.title}</span>
-                        </div>
-
-                        <div class="sidebar__item-content">
-                            ${t.description}
-                        </div>
-                    </li>
-                </ul>
+            <div class="sidebar__tasks-date">
+                ${t.startDate}
+            </div>
+            <li class="sidebar__item">
+                <div class="sidebar__item-time">
+                    <p>${t.startTime}</p>
+                    <span>${t.title}</span>
+                </div>
+                
+                <div class="sidebar__item-content">
+                    ${t.description}
+                </div>
+            </li>
         `;
     });
-
-
-    console.log(tasks);
-    console.log(tasks[0].status);
-    console.log(tasksDone);
-
-
 }
 getTasks();
 
+
+//const today = new Date().toISOString().split('T')[0]; lấy ngày hiện tại, nếu task.startDate === today thì lấy, filter
+//new Date(task.startDate) < today lọc ngày trước hôm nay, filter
+//new Date(task.startDate) > today lọc ngày sau hôm nay, filter
+/**
+ *  tasks.sort((a, b) =>
+    new Date(a.startDate) -
+    new Date(b.startDate)
+    ); xắp xếp gần xa
+ */
+//Get tasks today
+function filterToday(tasks){
+    const today = new Date().toISOString().split('T')[0];
+    return tasks.filter(t => t.startDate === today);
+}
+
+//Get tasks past
+function filterPass(tasks){
+    const today = new Date();
+    return tasks.filter(t => new Date(t.startDate) < today);
+}
+
+//Get tasks future
+function filterFuture(tasks){
+    const today = new Date();
+    return tasks.filter(t => new Date(t.startDate) > today);
+}
 

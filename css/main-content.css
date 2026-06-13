@@ -161,7 +161,7 @@ a, ul, li{
 
 
 /* UPCOMING */
-.main__content .main__upcoming{}
+/* .main__content .main__upcoming{}
 
 .main__content .main__upcoming h3{
     padding: 20px 0;
@@ -187,4 +187,54 @@ a, ul, li{
 .taskItem:nth-of-type(3){
     background: #3333;
     border-top: 10px solid rgb(190, 105, 190);
+} */
+
+/* Tasks */
+.main__tasks{
+}
+
+.main__tasks h3{
+    margin: 20px 0;
+}
+
+.taskItem{
+    background:#ddd;
+    border-top: 30px solid green;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.taskHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.taskActions{
+    display:flex;
+    gap:12px;
+    cursor:pointer;
+}
+
+.taskDetail{
+    max-height:0;  /*Chiều cao = 0, không nhìn thấy*/
+    overflow:hidden; /*Dư ra thì cắt */
+    opacity:0;
+    transition:.3s;
+}
+
+.taskItem.active .taskDetail{ /*Khi active bấm detail */
+    max-height:300px;
+    opacity:1;
+    margin-top:20px;
+}
+
+
+.taskItem.active .btn-detail{
+    transform:rotate(180deg);
+}
+
+.btn-detail{
+    transition:.3s;
 }

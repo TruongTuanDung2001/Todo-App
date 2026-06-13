@@ -110,48 +110,48 @@ getTasks();
     ); xắp xếp gần xa
  */
 //Get tasks today
-function filterToday(tasks){
+function filterToday(tasks) {
     const today = new Date().toISOString().split('T')[0];
     return tasks.filter(t => t.startDate === today);
 }
 
 //Get tasks past
-function filterPass(tasks){
+function filterPass(tasks) {
     const today = new Date();
     return tasks.filter(t => new Date(t.startDate) < today);
 }
 
 //Get tasks future
-function filterFuture(tasks){
+function filterFuture(tasks) {
     const today = new Date();
     return tasks.filter(t => new Date(t.startDate) > today);
 }
 
 //Get tasks done
-function filterDone(tasks){
+function filterDone(tasks) {
     return tasks.filter(t => t.status === 'done');
 }
 
 //Get tasks active
-function filterActive(tasks){
+function filterActive(tasks) {
     return tasks.filter(t => t.status === 'active');
 }
 
 //Apply filter
-function applyFilter(optionValue){
+function applyFilter(optionValue) {
     switch (optionValue) {
         case 'today':
             return filterToday(allTasks);
             break;
-        
+
         case 'past':
             return filterPass(allTasks);
             break;
-    
+
         case 'future':
             return filterFuture(allTasks);
             break;
-        
+
         case 'done':
             return filterDone(allTasks);
             break;
@@ -167,7 +167,15 @@ function applyFilter(optionValue){
 
 let optionTasks = document.querySelector('.filter-option');
 
-optionTasks.addEventListener('change', function(){
+optionTasks.addEventListener('change', function () {
     let filtered = applyFilter(optionTasks.value);
     renderTasks(filtered);
 });
+
+// Task detail
+document.addEventListener('click',function (e) { //Sự kiện click toàn trang
+        if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
+            let task = e.target.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
+            task.classList.toggle('active'); //thêm, xóa class active vào taskItem
+        }
+    });

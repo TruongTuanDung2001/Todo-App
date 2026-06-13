@@ -172,10 +172,24 @@ optionTasks.addEventListener('change', function () {
     renderTasks(filtered);
 });
 
-// Task detail
+// Task detail / click button detail
 document.addEventListener('click',function (e) { //Sự kiện click toàn trang
-        if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
-            let task = e.target.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
-            task.classList.toggle('active'); //thêm, xóa class active vào taskItem
-        }
-    });
+    if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
+        let task = e.target.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
+        task.classList.toggle('active'); //thêm, xóa class active vào taskItem
+    }
+});
+
+//random border color tasks
+let tasksItem = document.querySelectorAll('.taskItem');
+console.log(tasksItem);
+
+tasksItem.forEach((t) => {
+    let borderColor = `rgb(
+        ${Math.random()*255},
+        ${Math.random()*255},
+        ${Math.random()*255}
+    )`;
+
+    t.style.borderTop = `30px solid ${borderColor}`;
+});

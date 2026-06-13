@@ -199,7 +199,7 @@ a, ul, li{
 
 .taskItem{
     background:#ddd;
-    border-top: 30px solid green;
+    /* border-top: 30px solid green; */
     border-radius:18px;
     padding:20px;
     margin-bottom:20px;

@@ -108,10 +108,10 @@ a, ul, li{
 
 /* CONTENT */
 .main__content{
-    display:grid;
+    /* display:grid;
     grid-template-columns:
         2fr 3fr;
-    gap:30px;
+    gap:30px; */
 }
 
 
@@ -191,10 +191,25 @@ a, ul, li{
 
 /* Tasks */
 .main__tasks{
+
 }
 
 .main__tasks h3{
     margin: 20px 0;
+}
+
+.main__tasks .taskList{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    /*
+        Sửa css sử dụng grid mà các item tự co giãn 
+        - mặc định grid để phân cột hàng nên mặc định là align-items:stretch; nên 1 item trong div đó thay đổi thì các item khác điều thay đổi độ cao, rộng luôn
+        - chỉ cần để align-items: start; chính
+        - hoặc trong item để height: fit-content; để nó không tự động thay đổi chiều cao, rộng
+    */
 }
 
 .taskItem{
@@ -203,6 +218,7 @@ a, ul, li{
     border-radius:18px;
     padding:20px;
     margin-bottom:20px;
+    height: fit-content;
 }
 
 .taskHeader{

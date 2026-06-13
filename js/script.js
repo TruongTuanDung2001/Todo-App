@@ -137,6 +137,7 @@ function filterActive(tasks) {
     return tasks.filter(t => t.status === 'active');
 }
 
+
 //Apply filter
 function applyFilter(optionValue) {
     switch (optionValue) {
@@ -172,13 +173,19 @@ optionTasks.addEventListener('change', function () {
     renderTasks(filtered);
 });
 
+
 // Task detail / click button detail
-document.addEventListener('click',function (e) { //Sự kiện click toàn trang
-    if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
-        let task = e.target.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
+let btnDetail = document.querySelectorAll('.btn-detail');
+btnDetail.forEach((btn) => {
+        btn.addEventListener('click',function (e) { //Sự kiện click toàn trang
+        // if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
+        // }
+        let task = this.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
         task.classList.toggle('active'); //thêm, xóa class active vào taskItem
-    }
-});
+    });
+})
+
+
 
 //random border color tasks
 let tasksItem = document.querySelectorAll('.taskItem');

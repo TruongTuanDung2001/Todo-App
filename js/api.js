@@ -19,7 +19,11 @@ document.addEventListener('click', async function(e){
         let task = e.target.closest('.taskItem');
         let taskId = task.dataset.id;
 
-        await deleteTask(taskId);
-        getTasks();
+        let isConfirm = confirm('Are you sure you want to delete this task!');
+        
+        if(isConfirm){
+            await deleteTask(taskId);
+            getTasks();
+        }
     }
 });

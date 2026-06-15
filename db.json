@@ -150,18 +150,6 @@
       "startDate": "2026-06-15",
       "startTime": "19:00",
       "deadline": "2026-06-28"
-    },
-    {
-      "id": "14",
-      "userId": 3,
-      "title": "Learn Debounce",
-      "description": "Optimize input search",
-      "status": "active",
-      "priority": "medium",
-      "createdAt": "2026-06-14",
-      "startDate": "2026-06-16",
-      "startTime": "10:30",
-      "deadline": "2026-06-23"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

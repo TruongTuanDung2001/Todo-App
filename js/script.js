@@ -107,7 +107,7 @@ function renderTasksDetail(tasks) {
     let taskItem = document.querySelector('.taskList');
     console.log(taskItem);
     taskItem.innerHTML = '';
-    //<!-- <i class="fa-solid fa-bookmark"></i> -->
+    //<!-- <i class="fa-solid fa-bookmark"></i> có lưu fa-regular không lưu -->
     tasks.forEach((t) => {
         taskItem.innerHTML += `
         <div class="taskItem" data-id=${t.id}>
@@ -116,7 +116,7 @@ function renderTasksDetail(tasks) {
                     ${t.title}
                 </span>
                 <div class="taskActions">
-                    <i class="fa-regular fa-bookmark btn-favorite"></i>
+                    <i class="${t.isFavorite ? 'fa-solid' : 'fa-regular'} fa-bookmark btn-favorite"></i>
                     <i class="fa-solid fa-circle-minus btn-delete"></i>
                     <i class="fa-solid fa-caret-down btn-detail"></i>
                 </div>

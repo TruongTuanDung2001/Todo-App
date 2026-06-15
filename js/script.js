@@ -54,6 +54,9 @@ async function getTasks() {
             allTasks = await res.json();
             updateDashboard(allTasks);
             renderTasks(allTasks);
+            renderTasksDetail(allTasks);
+            randomColor();
+            console.log(allTasks);
         }
     } catch (error) {
         console.log(error);
@@ -73,6 +76,7 @@ function updateDashboard(tasks) {
     done.textContent = tasksDone.length;
     active.textContent = tasksActive.length;
 }
+
 
 function renderTasks(tasks) {
     //list tasks
@@ -96,6 +100,38 @@ function renderTasks(tasks) {
             </li>
         `;
     });
+}
+
+// render tasks detail
+function renderTasksDetail(tasks) {
+    let taskItem = document.querySelector('.taskList');
+    console.log(taskItem);
+    taskItem.innerHTML = '';
+    tasks.forEach((t) => {
+        taskItem.innerHTML += `
+        <div class="taskItem">
+            <div class="taskHeader">
+                <span>
+                    ${t.title}
+                </span>
+                <div class="taskActions">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <i class="fa-solid fa-circle-minus"></i>
+                    <i class="fa-solid fa-caret-down btn-detail"></i>
+                </div>
+            </div>
+            <div class="taskDetail">
+                <p class="task-detail__description">Description: ${t.description}</p>
+                <p class="task-detail__status">Status: ${t.status}</p>
+                <p class="task-detail__created">Created: ${t.createdAt}</p>
+                <p class="task-detail__start">Start: ${t.startDate}</p>
+                <p class="task-detail__time">Time: ${t.startTime}</p>
+                <p class="task-detail__deadline">Deadline: ${t.deadline}</p>
+            </div>
+        </div>
+    `
+});
+
 }
 getTasks();
 
@@ -175,28 +211,39 @@ optionTasks.addEventListener('change', function () {
 
 
 // Task detail / click button detail
-let btnDetail = document.querySelectorAll('.btn-detail');
-btnDetail.forEach((btn) => {
-        btn.addEventListener('click',function (e) { //Sự kiện click toàn trang
-        // if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
-        // }
-        let task = this.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
-        task.classList.toggle('active'); //thêm, xóa class active vào taskItem
-    });
-})
+let taskList = document.querySelector('.taskList'); //là div chứa các taskItem bên trong
+taskList.addEventListener('click', function(e){
+    if(e.target.classList.contains('btn-detail')){
+        let task = e.target.closest('.taskItem');
+        task.classList.toggle('active');
+    }
+});
+
+
+// btnDetail.forEach((btn) => {
+//     btn.addEventListener('click', function (e) { //Sự kiện click toàn trang
+//         // if (e.target.classList.contains('btn-detail')) { //nếu như phần tử click có chứa class là 'btn-detail'
+//         // }
+//         let task = this.closest('.taskItem'); //từ phần tử con e.target, đi lên trên tìm phần tử cha gần nhất chứa class .taskItem.
+//         console.log(task);
+//         task.classList.toggle('active'); //thêm, xóa class active vào taskItem
+//         console.log(task.classList);
+//     });
+// })
 
 
 
 //random border color tasks
-let tasksItem = document.querySelectorAll('.taskItem');
-console.log(tasksItem);
-
-tasksItem.forEach((t) => {
-    let borderColor = `rgb(
-        ${Math.random()*255},
-        ${Math.random()*255},
-        ${Math.random()*255}
-    )`;
-
-    t.style.borderTop = `30px solid ${borderColor}`;
-});
+function randomColor(ren){
+    let tasksItem = document.querySelectorAll('.taskItem');
+    
+    tasksItem.forEach((t) => {
+        let borderColor = `rgb(
+            ${Math.random() * 255},
+            ${Math.random() * 255},
+            ${Math.random() * 255}
+        )`;
+    
+        t.style.borderTop = `30px solid ${borderColor}`;
+    });
+}

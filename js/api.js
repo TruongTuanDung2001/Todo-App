@@ -5,8 +5,8 @@ async function deleteTask(taskId){
             method: 'DELETE'
         });
         if(response.ok){
-            alert("Delete task success");
-            let data = response.json();
+            alert("Delete success");
+            let data = await response.json();
             console.log(data);
         }
     }catch(error){
@@ -14,3 +14,12 @@ async function deleteTask(taskId){
     }
 }
 
+document.addEventListener('click', async function(e){
+    if(e.target.classList.contains('btn-delete')){
+        let task = e.target.closest('.taskItem');
+        let taskId = task.dataset.id;
+
+        await deleteTask(taskId);
+        getTasks();
+    }
+});

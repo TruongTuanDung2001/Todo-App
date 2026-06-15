@@ -107,9 +107,10 @@ function renderTasksDetail(tasks) {
     let taskItem = document.querySelector('.taskList');
     console.log(taskItem);
     taskItem.innerHTML = '';
+    //<!-- <i class="fa-solid fa-bookmark"></i> -->
     tasks.forEach((t) => {
         taskItem.innerHTML += `
-        <div class="taskItem">
+        <div class="taskItem" data-id=${t.id}>
             <div class="taskHeader">
                 <span>
                     ${t.title}

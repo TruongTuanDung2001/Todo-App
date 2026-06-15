@@ -115,8 +115,8 @@ function renderTasksDetail(tasks) {
                     ${t.title}
                 </span>
                 <div class="taskActions">
-                    <i class="fa-regular fa-bookmark"></i>
-                    <i class="fa-solid fa-circle-minus"></i>
+                    <i class="fa-regular fa-bookmark btn-favorite"></i>
+                    <i class="fa-solid fa-circle-minus btn-delete"></i>
                     <i class="fa-solid fa-caret-down btn-detail"></i>
                 </div>
             </div>
@@ -173,7 +173,6 @@ function filterActive(tasks) {
     return tasks.filter(t => t.status === 'active');
 }
 
-
 //Apply filter
 function applyFilter(optionValue) {
     switch (optionValue) {
@@ -209,7 +208,6 @@ optionTasks.addEventListener('change', function () {
     renderTasks(filtered);
 });
 
-
 // Task detail / click button detail
 let taskList = document.querySelector('.taskList'); //là div chứa các taskItem bên trong
 taskList.addEventListener('click', function(e){
@@ -234,7 +232,7 @@ taskList.addEventListener('click', function(e){
 
 
 //random border color tasks
-function randomColor(ren){
+function randomColor(){
     let tasksItem = document.querySelectorAll('.taskItem');
     
     tasksItem.forEach((t) => {
@@ -247,3 +245,5 @@ function randomColor(ren){
         t.style.borderTop = `30px solid ${borderColor}`;
     });
 }
+
+

@@ -209,14 +209,16 @@ optionTasks.addEventListener('change', function () {
     renderTasks(filtered);
 });
 
-// Task detail / click button detail
-let taskList = document.querySelector('.taskList'); //là div chứa các taskItem bên trong
-taskList.addEventListener('click', function(e){
-    if(e.target.classList.contains('btn-detail')){
-        let task = e.target.closest('.taskItem');
-        task.classList.toggle('active');
-    }
-});
+function showTaskDetail(){
+    // Task detail / click button detail
+    let taskList = document.querySelector('.taskList'); //là div chứa các taskItem bên trong
+    taskList.addEventListener('click', function(e){
+        if(e.target.classList.contains('btn-detail')){
+            let task = e.target.closest('.taskItem');
+            task.classList.toggle('active');
+        }
+    });
+}
 
 
 // btnDetail.forEach((btn) => {

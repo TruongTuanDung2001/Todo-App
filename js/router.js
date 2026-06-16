@@ -13,6 +13,7 @@ async function renderPage(page){
     }
     if(page === 'dashboard'){
         getTasks();
+        showTaskDetail();
     }
     
 }

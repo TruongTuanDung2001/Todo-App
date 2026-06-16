@@ -150,19 +150,6 @@
       "startDate": "2026-06-13",
       "startTime": "16:30",
       "deadline": "2026-06-22"
-    },
-    {
-      "id": "12",
-      "userId": 2,
-      "title": "Responsive Design",
-      "description": "Tablet and mobile",
-      "status": "active",
-      "isFavorite": false,
-      "priority": "low",
-      "createdAt": "2026-06-10",
-      "startDate": "2026-06-15",
-      "startTime": "19:00",
-      "deadline": "2026-06-28"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

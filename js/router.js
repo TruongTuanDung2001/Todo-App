@@ -15,6 +15,10 @@ async function renderPage(page){
         getTasks();
         showTaskDetail();
     }
+    else if(page === 'save'){
+        console.log('save.html');
+           
+    }
     
 }
 
@@ -23,6 +27,7 @@ document.addEventListener('click', function(e){
     if(page){
         renderPage(page);
     }
+    
 })
 
 renderPage('dashboard');

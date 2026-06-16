@@ -25,6 +25,7 @@
 
 .app .layout .sidebar--left .sidebar__header .sidebar__title{
     font-size: 28px;
+    cursor: pointer;
 }
 
 /* infor */

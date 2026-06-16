@@ -7,19 +7,19 @@ async function renderPage(page){
 
     if(response.ok){
         let html = await response.text();
-        console.log(html);
+        // console.log(html);
     
         layoutMain.innerHTML = html;
     }
     if(page === 'dashboard'){
+        console.log('dashboard.html');
         getTasks();
         showTaskDetail();
     }
     else if(page === 'save'){
         console.log('save.html');
-           
+        await getTaskSave();
     }
-    
 }
 
 document.addEventListener('click', function(e){

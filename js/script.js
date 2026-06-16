@@ -52,11 +52,13 @@ async function getTasks() {
         let res = await fetch('http://localhost:3000/tasks');
         if (res.ok) {
             allTasks = await res.json();
-            updateDashboard(allTasks);
-            renderTasks(allTasks);
-            renderTasksDetail(allTasks);
-            randomColor();
-            console.log(allTasks);
+            if (allTasks) {
+                updateDashboard(allTasks);
+                renderTasks(allTasks);
+                renderTasksDetail(allTasks);
+                randomColor();
+                console.log(allTasks);
+            }
         }
     } catch (error) {
         console.log(error);
@@ -105,7 +107,6 @@ function renderTasks(tasks) {
 // render tasks detail
 function renderTasksDetail(tasks) {
     let taskItem = document.querySelector('.taskList');
-    console.log(taskItem);
     taskItem.innerHTML = '';
     //<!-- <i class="fa-solid fa-bookmark"></i> có lưu fa-regular không lưu -->
     tasks.forEach((t) => {
@@ -131,10 +132,8 @@ function renderTasksDetail(tasks) {
             </div>
         </div>
     `
-});
-
+    });
 }
-getTasks();
 
 
 //const today = new Date().toISOString().split('T')[0]; lấy ngày hiện tại, nếu task.startDate === today thì lấy, filter
@@ -209,11 +208,11 @@ optionTasks.addEventListener('change', function () {
     renderTasks(filtered);
 });
 
-function showTaskDetail(){
+function showTaskDetail() {
     // Task detail / click button detail
     let taskList = document.querySelector('.taskList'); //là div chứa các taskItem bên trong
-    taskList.addEventListener('click', function(e){
-        if(e.target.classList.contains('btn-detail')){
+    taskList.addEventListener('click', function (e) {
+        if (e.target.classList.contains('btn-detail')) {
             let task = e.target.closest('.taskItem');
             task.classList.toggle('active');
         }
@@ -235,16 +234,16 @@ function showTaskDetail(){
 
 
 //random border color tasks
-function randomColor(){
+function randomColor() {
     let tasksItem = document.querySelectorAll('.taskItem');
-    
+
     tasksItem.forEach((t) => {
         let borderColor = `rgb(
             ${Math.random() * 255},
             ${Math.random() * 255},
             ${Math.random() * 255}
         )`;
-    
+
         t.style.borderTop = `30px solid ${borderColor}`;
     });
 }

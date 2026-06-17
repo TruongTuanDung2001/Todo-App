@@ -79,7 +79,7 @@
       "title": "Practice DELETE",
       "description": "Remove task by id",
       "status": "done",
-      "isFavorite": false,
+      "isFavorite": true,
       "priority": "medium",
       "createdAt": "2026-06-11",
       "startDate": "2026-06-12",

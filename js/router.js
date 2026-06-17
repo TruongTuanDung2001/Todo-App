@@ -10,6 +10,7 @@ async function renderPage(page){
         // console.log(html);
     
         layoutMain.innerHTML = html;
+        initRouter();
     }
     if(page === 'dashboard'){
         console.log('dashboard.html');
@@ -22,12 +23,15 @@ async function renderPage(page){
     }
 }
 
-document.addEventListener('click', function(e){
-    let page = e.target.dataset.page;
-    if(page){
-        renderPage(page);
-    }
-    
-})
+function initRouter(){
+    document.addEventListener('click', function(e){
+        let page = e.target.dataset.page;
+        if(page){
+            renderPage(page);
+        }
+        
+    })
 
-renderPage('dashboard');
+}
+
+renderPage('save');

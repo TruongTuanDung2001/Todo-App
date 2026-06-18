@@ -1,16 +1,15 @@
 //Chuyển nội dung main thành trang save, mà không load dữ liệu
 
 let layoutMain = document.querySelector('.layout__main');
+initRouter();
+
 
 async function renderPage(page){
     let response = await fetch(`../html/pages/${page}.html`);
 
     if(response.ok){
         let html = await response.text();
-        // console.log(html);
-    
         layoutMain.innerHTML = html;
-        initRouter();
     }
     if(page === 'dashboard'){
         console.log('dashboard.html');
@@ -23,6 +22,7 @@ async function renderPage(page){
     }
     else if(page === 'create-task'){
         console.log('create-task.html');
+        clickBtn();
     }
 }
 
@@ -32,9 +32,7 @@ function initRouter(){
         if(page){
             renderPage(page);
         }
-        
     })
 
 }
-
 renderPage('create-task');

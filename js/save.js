@@ -12,7 +12,6 @@ async function getTaskSave(){
             allTaskSave = allTask.filter(t => t.isFavorite == true);
             console.log(allTaskSave);
             renderTaskSave(allTaskSave);
-            openTask();
             searchTaskSave(allTaskSave);
         }
         
@@ -55,16 +54,6 @@ function renderTaskSave(taskSave){
     })
 }
 
-function openTask(){
-    let btnOpen = document.querySelectorAll('.btn-open');
-    btnOpen.forEach((btn) => {
-        btn.addEventListener('click', function(){
-            // let page = btn.dataset.page;
-            console.log(page);
-            
-        });
-    })
-}
 
 function searchTaskSave(allTaskSave){
     let inputSearch = document.querySelector('.input-search');

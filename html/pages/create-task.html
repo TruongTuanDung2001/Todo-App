@@ -18,20 +18,20 @@
             <div class="formGroup">
                 <label>Task Title</label>
                 <input
-                type="text" class="input" placeholder="Ex: Learn Fetch API">
+                type="text" class="input inputTitle" placeholder="Ex: Learn Fetch API">
             </div>
 
             <!-- Description -->
             <div class="formGroup">
                 <label>Description</label>
-                <textarea class="input textarea" placeholder="Task description..."></textarea>
+                <textarea class="input inputDescription textarea" placeholder="Task description..."></textarea>
             </div>
 
             <!-- Status + Priority -->
             <div class="row">
                 <div class="formGroup">
                     <label>Status</label>
-                    <select class="input">
+                    <select class="input inputStatus">
                         <option value="active">Active</option>
                         <option value="done">Done</option>
                     </select>
@@ -39,7 +39,7 @@
 
                 <div class="formGroup">
                     <label>Priority</label>
-                    <select class="input">
+                    <select class="input inputPriority">
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
@@ -51,19 +51,19 @@
             <div class="row">
                 <div class="formGroup">
                     <label>Start Date</label>
-                    <input type="date" class="input">
+                    <input type="date" class="input inputDate">
                 </div>
 
                 <div class="formGroup">
                     <label>Start Time</label>
-                    <input type="time" class="input">
+                    <input type="time" class="input inputFormGroup">
                 </div>
             </div>
 
             <!-- Deadline -->
             <div class="formGroup">
                 <label>Deadline</label>
-                <input type="date" class="input">
+                <input type="date" class="input inputDeadline">
             </div>
 
             <!-- Preview -->
@@ -77,11 +77,12 @@
                 </div>
             </div>
 
-            <button type="submit" class="btnCreate">
+            <button type="button" class="btnCreate">
                 Create Task
             </button>
         </form>
     </div>
     <!--  -->
+    
 </body>
 </html>

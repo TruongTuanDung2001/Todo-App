@@ -1,15 +1,17 @@
 //Post task api
-async function createTask(){
+async function createTask(task){
     try {
-        let response = await fetch('http://localhost:3000/tasks',{
+        let response = await fetch('http://localhost:3000/tasks',
+        {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify()
+            body: JSON.stringify(task)
         })
         if(response.ok){
             alert('Add success');
+            let data = await response.json();
         }
     } catch (error) {
         console.log(error);
@@ -17,8 +19,6 @@ async function createTask(){
 }
 
 function clickBtn(){
-    console.log('kaksk');
-    
     let btnCreate = document.querySelector('.btnCreate');
     let taskCreate = [];
     //
@@ -57,8 +57,8 @@ function clickBtn(){
                 deadline: taskDeadline.value,
                 createAt: new Date().toISOString().split('T')[0],
             };
-            taskCreate.push(task);
-            console.log(taskCreate);
+            // taskCreate.push(task);cái này trả về [{...}]. Vì post thêm dữ liệu là 1 [] chứ không phải là [{...}] nên là mình thêm cái task chứ kh phải push cái task vào taskCreate rồi mình mời Post api createTask();
+            createTask(task);
         }
         else{
             console.log('Thiếu dữ liệu.');

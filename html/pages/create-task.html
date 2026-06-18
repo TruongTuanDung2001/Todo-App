@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/create-task.css">
+    <title>Create task page</title>
+</head>
+<body>
+    <!--  -->
+    <div class="createTask">
+        <div class="createTask__header">
+            <h1>Create New Task</h1>
+            <p>Create and schedule your next task</p>
+        </div>
+        <form class="createTask__form">
+            <!-- Title -->
+            <div class="formGroup">
+                <label>Task Title</label>
+                <input
+                type="text" class="input" placeholder="Ex: Learn Fetch API">
+            </div>
+
+            <!-- Description -->
+            <div class="formGroup">
+                <label>Description</label>
+                <textarea class="input textarea" placeholder="Task description..."></textarea>
+            </div>
+
+            <!-- Status + Priority -->
+            <div class="row">
+                <div class="formGroup">
+                    <label>Status</label>
+                    <select class="input">
+                        <option value="active">Active</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <div class="formGroup">
+                    <label>Priority</label>
+                    <select class="input">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Date -->
+            <div class="row">
+                <div class="formGroup">
+                    <label>Start Date</label>
+                    <input type="date" class="input">
+                </div>
+
+                <div class="formGroup">
+                    <label>Start Time</label>
+                    <input type="time" class="input">
+                </div>
+            </div>
+
+            <!-- Deadline -->
+            <div class="formGroup">
+                <label>Deadline</label>
+                <input type="date" class="input">
+            </div>
+
+            <!-- Preview -->
+            <div class="preview">
+                <h3>Preview</h3>
+                <div class="previewCard">
+                    <div class="previewTop"></div>
+                    <div class="previewBody">
+                        Task Title
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btnCreate">
+                Create Task
+            </button>
+        </form>
+    </div>
+    <!--  -->
+</body>
+</html>

@@ -21,6 +21,9 @@ async function renderPage(page){
         console.log('save.html');
         await getTaskSave();
     }
+    else if(page === 'create-task'){
+        console.log('create-task.html');
+    }
 }
 
 function initRouter(){
@@ -34,4 +37,4 @@ function initRouter(){
 
 }
 
-renderPage('save');
+renderPage('create-task');

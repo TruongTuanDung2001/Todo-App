@@ -13,6 +13,7 @@ async function getTaskSave(){
             console.log(allTaskSave);
             renderTaskSave(allTaskSave);
             openTask();
+            searchTaskSave(allTaskSave);
         }
         
     } catch (error) {
@@ -65,3 +66,12 @@ function openTask(){
     })
 }
 
+function searchTaskSave(allTaskSave){
+    let inputSearch = document.querySelector('.input-search');
+    inputSearch.addEventListener('input', function(e){
+        let keyword = this.value.toLowerCase().trim();
+        let filtered = allTaskSave.filter(t => t.title.toLowerCase().includes(keyword) || t.description.toLowerCase().includes(keyword));
+
+        renderTaskSave(filtered);
+    });
+}

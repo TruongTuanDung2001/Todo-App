@@ -66,6 +66,8 @@
     padding: 4px;
     margin-bottom: 4px;
 }
+
+
 /* Arrow */
 .app .layout .sidebar--right .sidebar__tasks .sidebar__item::before{
     content: "";
@@ -81,19 +83,20 @@
     color: #000;
     font-weight: bold;
     font-size: 14px;
-    width: 110px;
+    width: 210px;
 }
 
 .app .layout .sidebar--right .sidebar__tasks .sidebar__item-time span{
-    font-size: 12px;
+    font-size: 16px;
     color: rgb(33, 140, 33);
     font-weight: 100;
 }
 
 .app .layout .sidebar--right .sidebar__tasks .sidebar__item-content{
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(4, 92, 4);
     font-weight: bold;
     word-break: break-word;
     width: 100%;
+    text-align: center;
 }

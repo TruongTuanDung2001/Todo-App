@@ -56,7 +56,7 @@ async function getTasks() {
                 updateDashboard(allTasks);
                 renderTasks(allTasks);
                 renderTasksDetail(allTasks);
-                randomColor();
+                randomColor(allTasks);
                 console.log(allTasks);
             }
         }
@@ -93,11 +93,11 @@ function renderTasks(tasks) {
             <li class="sidebar__item">
                 <div class="sidebar__item-time">
                     <p>${t.startTime}</p>
-                    <span>${t.title}</span>
+                    <span>${t.description}</span>
                 </div>
                 
                 <div class="sidebar__item-content">
-                    ${t.description}
+                    ${t.title}
                 </div>
             </li>
         `;
@@ -235,9 +235,26 @@ function showTaskDetail() {
 
 
 //random border color tasks
-function randomColor() {
+function randomColor(allTask) {
     let tasksItem = document.querySelectorAll('.taskItem');
+    console.log('log nè: ', allTask);
+    console.log(tasksItem);
+    // let colorTotal = '#0c4c4a';
+    let colorDone = 'rgb(221, 74, 20)';
+    let colorActive = 'rgb(152, 29, 152)';
 
+    //
+    for(let i = 0; i < allTask.length; i++){
+        if(allTask[i].status == 'active'){
+            tasksItem[i].style.borderTop = `30px solid ${colorActive}`; 
+        }
+        else if(allTask[i].status == 'done'){
+            tasksItem[i].style.borderTop = `30px solid ${colorDone}`; 
+        }
+    }
+
+
+    /*
     tasksItem.forEach((t) => {
         let borderColor = `rgb(
             ${Math.random() * 255},
@@ -247,6 +264,7 @@ function randomColor() {
 
         t.style.borderTop = `30px solid ${borderColor}`;
     });
+    */
 }
 
 

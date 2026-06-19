@@ -62,18 +62,11 @@ async function updateTask(taskId, input) {
 
             //
             if (response.ok) {
-                alert(
-                    'Update success'
-                );
-
-                renderPage(
-                    'dashboard'
-                );
+                alert('Update success');
+                renderPage('dashboard');
             }
-
         });
     } catch (error) {
         console.log(error);
-
     }
 }

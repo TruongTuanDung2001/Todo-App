@@ -162,6 +162,17 @@
       "createAt": "2026-06-18",
       "id": "elhdCI7ZzQo",
       "isFavorite": true
+    },
+    {
+      "title": "lau nhà",
+      "description": "hôm nay",
+      "status": "active",
+      "priority": "low",
+      "startDate": "2026-06-19",
+      "startTime": "01:20",
+      "deadline": "2026-06-19",
+      "createAt": "2026-06-19",
+      "id": "z1Ig2nF4pis"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -255,6 +255,15 @@ a, ul, li{
     transition:.3s;
 }
 
+.taskItem .btn-edit{
+    color: rgb(151, 75, 232);
+    transition:.3s;
+}
+
+.taskItem .btn-edit:hover{
+    transform: translateY(-2px);
+}
+
 .taskItem .btn-delete{
     color: rgb(232, 75, 75);
     transition:.3s;

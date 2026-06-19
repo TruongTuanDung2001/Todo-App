@@ -117,6 +117,7 @@ function renderTasksDetail(tasks) {
                     ${t.title}
                 </span>
                 <div class="taskActions">
+                    <i class="fa-regular fa-pen-to-square btn-edit" data-page="edit-task" data-id="${t.id}"></i>
                     <i class="${t.isFavorite ? 'fa-solid' : 'fa-regular'} fa-bookmark btn-favorite"></i>
                     <i class="fa-solid fa-circle-minus btn-delete"></i>
                     <i class="fa-solid fa-caret-down btn-detail"></i>

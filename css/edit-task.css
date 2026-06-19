@@ -1,0 +1,105 @@
+.editTask{
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.editTask__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.editTask__title{
+    font-size: 52px;
+    color:#0f5552;
+}
+
+.editTask__desc{
+    margin-top: 10px;
+    color:#666;
+}
+
+.btnBack{
+    padding: 14px 24px; 
+    border: none;
+    border-radius: 12px;
+    background:#ddd;
+    cursor: pointer;
+}
+
+.editForm{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;   
+}
+
+.formRow{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formGroup label{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.input{
+    padding: 22px;
+    border: none;
+    border-radius: 18px;
+    background:#efefef;
+    font-size: 18px;
+}
+
+textarea{
+    resize:none;
+}
+
+.previewCard{
+    padding:30px;
+    background:#d9d9d9;
+    border-top: 18px solid #176560;
+    border-radius:20px;
+}
+
+.previewTaskTitle{
+    font-size:26px;
+    margin-bottom:16px;
+}
+
+.formActions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.btnDeleteTask{
+    padding: 18px 36px;
+    background:#ff5353;
+    color:white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+
+.btnUpdate{
+    padding: 18px 40px;
+    background:#0f5552;
+    color:white;
+    border:none;
+    border-radius:16px;
+    cursor:pointer;
+}

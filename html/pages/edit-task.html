@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit task page</title>
+    <link rel="stylesheet" href="/css/edit-task.css">
+</head>
+<body>
+    <div class="editTask">
+        <!-- HEADER -->
+        <div class="editTask__header">
+            <div>
+                <h1 class="editTask__title">Edit Task</h1>
+                <p class="editTask__desc">
+                    Update and manage your task
+                </p>
+            </div>
+            <button class="btnBack" data-page="dashboard">← Back</button>
+        </div>
+
+        <!-- FORM -->
+        <form class="editForm">
+            <!-- title -->
+            <div class="formGroup">
+                <label>Task Title</label>
+                <input type="text" class="input inputTitle" placeholder="Task title">
+            </div>
+
+            <!-- description -->
+            <div class="formGroup">
+                <label>Description</label>
+                <textarea class="input inputDescription" rows="6" placeholder="Task description"></textarea>
+            </div>
+
+            <!-- row -->
+            <div class="formRow">
+                <div class="formGroup">
+                    <label>Status</label>
+                    <select class="input inputStatus">
+                        <option value="active">Active</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <div class="formGroup">
+                    <label>Priority</label>
+                    <select class="input inputPriority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- row -->
+            <div class="formRow">
+                <div class="formGroup">
+                    <label>Start Date</label>
+                    <input type="date" class="input inputDate">
+                </div>
+
+                <div class="formGroup">
+                    <label>Start Time</label>
+                    <input type="time" class="input inputFormGroup">
+                </div>
+            </div>
+
+            <div class="formGroup">
+                <label>Deadline</label>
+                <input type="date" class="input inputDeadline">
+            </div>
+
+            <!-- preview -->
+            <div class="preview">
+                <p class="preview__title">Preview</p>
+                <div class="previewCard">
+                    <h3 class="previewTaskTitle">Task Title</h3>
+                    <p class="previewTaskDesc">Description</p>
+                </div>
+            </div>
+
+            <!-- action -->
+            <div class="formActions">
+                <button type="button" class="btnDeleteTask">Delete</button>
+                <button type="button" class="btnUpdate">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!--  -->
+</body>
+</html>

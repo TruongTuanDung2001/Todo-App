@@ -35,4 +35,4 @@ function initRouter(){
     })
 
 }
-renderPage('create-task');
+renderPage('edit-task');

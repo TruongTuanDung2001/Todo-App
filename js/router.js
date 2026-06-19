@@ -4,7 +4,7 @@ let layoutMain = document.querySelector('.layout__main');
 initRouter();
 
 
-async function renderPage(page){
+async function renderPage(page, taskId = null){
     let response = await fetch(`../html/pages/${page}.html`);
 
     if(response.ok){
@@ -24,15 +24,25 @@ async function renderPage(page){
         console.log('create-task.html');
         clickBtn();
     }
+    else if(page === 'edit-task'){
+        console.log('edit-task.html');
+        loadEditTask(taskId);
+    }
 }
 
 function initRouter(){
     document.addEventListener('click', function(e){
         let page = e.target.dataset.page;
-        if(page){
+        let taskId = e.target.dataset.id;
+        if(!page){
+            return
+        }
+        else if(taskId){
+            renderPage(page, taskId);
+        }
+        else{
             renderPage(page);
         }
     })
-
 }
-renderPage('edit-task');
+renderPage('dashboard');

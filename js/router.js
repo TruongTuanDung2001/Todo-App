@@ -29,6 +29,10 @@ async function renderPage(page, taskId = null){
         loadEditTask(taskId);
         deleteTaskEditPage(taskId);
     }
+    else if(page === 'download'){
+        console.log('download.html');
+        initDownload();
+    }
 }
 
 function initRouter(){

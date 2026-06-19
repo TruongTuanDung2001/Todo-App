@@ -27,6 +27,7 @@ async function renderPage(page, taskId = null){
     else if(page === 'edit-task'){
         console.log('edit-task.html');
         loadEditTask(taskId);
+        deleteTaskEditPage(taskId);
     }
 }
 

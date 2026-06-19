@@ -70,3 +70,15 @@ async function updateTask(taskId, input) {
         console.log(error);
     }
 }
+
+//delete task by task id in edit page
+function deleteTaskEditPage(taskId) {
+    let btnDeleteTask = document.querySelector('.btnDeleteTask');
+    btnDeleteTask.addEventListener('click', async function (e) {
+        let isConfirm = confirm('Are you sure you want to delete this task!');
+        if(isConfirm){
+            await deleteTask(taskId);
+            renderPage('dashboard');
+        }
+    });
+}

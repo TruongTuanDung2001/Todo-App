@@ -19,7 +19,6 @@
     align-items: center;
     gap: 4px;
     height: 100px;
-    border: 1px solid #000000;
 }
 
 .app .layout .sidebar--right .sidebar__header .sidebar__logo{

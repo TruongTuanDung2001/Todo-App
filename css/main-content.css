@@ -12,6 +12,7 @@ a, ul, li{
 
 .app{
     height: 100vh;
+    
 }
 
 .app .layout{
@@ -21,13 +22,15 @@ a, ul, li{
 .app .layout .sidebar{
     height: 100%;
     width: 20%;
-    border: 1px solid #333;
+    border: 1px solid #000;
+
 }
 
 /* MAIN */
 .app .layout__main{
     width: 60%;
     border: 1px solid #000;
+    /* border-top: none; */
     margin-left: 20%;
     margin-right: 20%;
     min-height: 120vh;

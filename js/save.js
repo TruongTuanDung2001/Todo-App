@@ -6,11 +6,9 @@ async function getTaskSave(){
         let allTaskSave = [];
         if(response.ok){
             allTask = await response.json();
-            console.log(allTask);
             
             //Filter isFavorite true
             allTaskSave = allTask.filter(t => t.isFavorite == true);
-            console.log(allTaskSave);
             renderTaskSave(allTaskSave);
             searchTaskSave(allTaskSave);
         }
@@ -22,8 +20,6 @@ async function getTaskSave(){
 
 function renderTaskSave(taskSave){
     let saveList = document.querySelector('.save__list');
-    console.log(saveList);
-    
     saveList.innerHTML = '';
     taskSave.forEach((t) => {
         saveList.innerHTML += `

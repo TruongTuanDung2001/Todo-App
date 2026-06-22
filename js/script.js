@@ -57,7 +57,6 @@ async function getTasks() {
                 renderTasks(allTasks);
                 renderTasksDetail(allTasks);
                 randomColor(allTasks);
-                console.log(allTasks);
                 checkTask();
             }
         }
@@ -239,8 +238,6 @@ function showTaskDetail() {
 //random border color tasks
 function randomColor(allTask) {
     let tasksItem = document.querySelectorAll('.taskItem');
-    console.log('log nè: ', allTask);
-    console.log(tasksItem);
     // let colorTotal = '#0c4c4a';
     let colorDone = 'rgb(221, 74, 20)';
     let colorActive = 'rgb(152, 29, 152)';

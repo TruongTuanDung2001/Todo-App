@@ -280,3 +280,12 @@ a, ul, li{
 .taskItem .btn-favorite:hover{
     transform: translateY(-2px);
 }
+
+.taskItem .btn-check{
+    color: rgb(27, 128, 27);
+    transition: .3s;
+}
+
+.taskItem .btn-check:hover{
+    transform: translateY(-2px);
+}

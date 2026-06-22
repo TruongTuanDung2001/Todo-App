@@ -58,6 +58,7 @@ async function getTasks() {
                 renderTasksDetail(allTasks);
                 randomColor(allTasks);
                 console.log(allTasks);
+                checkTask();
             }
         }
     } catch (error) {
@@ -245,12 +246,12 @@ function randomColor(allTask) {
     let colorActive = 'rgb(152, 29, 152)';
 
     //
-    for(let i = 0; i < allTask.length; i++){
-        if(allTask[i].status == 'active'){
-            tasksItem[i].style.borderTop = `30px solid ${colorActive}`; 
+    for (let i = 0; i < allTask.length; i++) {
+        if (allTask[i].status == 'active') {
+            tasksItem[i].style.borderTop = `30px solid ${colorActive}`;
         }
-        else if(allTask[i].status == 'done'){
-            tasksItem[i].style.borderTop = `30px solid ${colorDone}`; 
+        else if (allTask[i].status == 'done') {
+            tasksItem[i].style.borderTop = `30px solid ${colorDone}`;
         }
     }
 
@@ -268,4 +269,31 @@ function randomColor(allTask) {
     */
 }
 
+function checkTask() {
+    document.addEventListener('click', async function (e) {
+        if (e.target.classList.contains('btn-check')) {
+            let id = e.target.closest('.taskItem').dataset.id;
 
+            //lấy task theo id
+            let response = await fetch(`http://localhost:3000/tasks/${id}`);
+            if (response.ok) {
+                let task = await response.json();
+
+                //đổi status
+                let newStatus = task.status === 'active' ? 'done' : 'active';
+
+                //gửi lên server cập nhật giao diện
+                await fetch(`http://localhost:3000/tasks/${id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        status: newStatus
+                    })
+                });
+                renderTasks();
+            }
+        }
+    });
+}
